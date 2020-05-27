@@ -7,9 +7,12 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": [
+      "js/background.js"
+    ]
   },
   "permissions": [
-    "debugger"
+    "webRequest",
+    "https://*/*"
   ]
 }
