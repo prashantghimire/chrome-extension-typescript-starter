@@ -17,17 +17,17 @@ chrome.runtime.onMessage.addListener(function (event) {
         field: key,
         value: vehicleDatum
       });
-      diagnosisResultString += `${key} : ${vehicleDatum}<br>`;
+      diagnosisResultString += `${key}: ${vehicleDatum}<br>`;
     }
   });
 
   $('#dealerName').append(event.websiteInfo.dealerName);
   console.log('info ', diagnosisResultString);
   let diagnosticsHtml = '';
-  if (diagnosisResultString){
+  if (diagnosisResultString) {
     diagnosticsHtml = '<div class="alert alert-danger">The following data is missing: <br>' + diagnosisResultString + '</div>';
   } else {
-    diagnosticsHtml = '<h3 class="alert alert-success">The button is good!</h3>';
+    diagnosticsHtml = '<h3 class="alert alert-success text-center">The button is good!</h3>';
   }
   $('#diagnosisInfo').append(diagnosticsHtml);
 
