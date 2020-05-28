@@ -1,17 +1,18 @@
-const version = '1.0';
-chrome.browserAction.onClicked.addListener(function (tab) {
+let key = 'windowState';
 
-  let w = 800;
-  let h = 600;
-  let left = (screen.width / 2) - (w / 2);
-  let top = (screen.height / 2) - (h / 2);
-  chrome.windows.create({
-    url: 'popup.html', type: 'popup',
-    width: w,
-    height: h,
-    left: left,
-    top: top
-  }, function (window) {
-  });
-});
-
+// chrome.browserAction.onClicked.addListener(function (tab) {
+//   console.log('triggered');
+//   // if (localStorage.getItem(key) === 'open') {
+//   //   console.log('already open');
+//   //   return;
+//   // }
+//
+//   chrome.tabs.create({'url': chrome.extension.getURL('popup.html')}, function (tab) {
+//     console.log('tab created : ', tab);
+//     localStorage.setItem(key, 'open');
+//   });
+// });
+//
+// chrome.tabs.onRemoved.addListener(function () {
+//   localStorage.removeItem(key);
+// });
